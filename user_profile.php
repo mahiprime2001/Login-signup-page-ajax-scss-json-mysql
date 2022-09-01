@@ -66,7 +66,7 @@ if(isset($_GET['logout'])){
                         <hr>
                         <div class="form-group">
                             <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                            <a href="home.php?logout=<?php echo $user_id;?>" class="nxt-btn" style="color:black; background-color:red; size: 20px">logout</a>
+                            <a href="index.php?logout=<?php echo $user_id;?>" class="nxt-btn" style="color:black; background-color:red; size: 20px">logout</a>
                             </div>
                         </div>
                     </form>
