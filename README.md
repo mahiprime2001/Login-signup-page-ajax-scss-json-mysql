@@ -51,5 +51,5 @@ SCSS contains all the features of CSS and contains more features that are not pr
 * JSON document databases use the same document-model format that developers use in their application code, which make it much easier for them to store and query data. The flexible, semi-structured, and hierarchical nature of JSON document databases allows them to evolve with applications' needs.
 
 ## Ajax Form 
-* We create ajax form using js which is used By sending asynchronous requests, it allows an application to refresh a part of a page without having to reload the whole document. 
+* We create ajax form using js which is used By sending asynchronous requests, it allows an application to refresh a part of a page without having to reload the whole document. we have created loginajax.js for login form and signupajax.js for signup form which are in js folder 
 
