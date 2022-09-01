@@ -42,11 +42,14 @@ and then we specify where we want our output  to be, which is our generated css.
 }
 
 Now go to the terminal and type node run watch:sass. This will start a watcher script.
-Let's open up the style.scss now and add the styling.
+
+SCSS contains all the features of CSS and contains more features that are not present in CSS which makes it a good choice for developers to use it. SCSS is full of advanced features. SCSS offers variables, you can shorten your code by using variables. It is a great advantage over conventional CSS.
 
 ## about json file 
-* the login details which are used while signup will be stored in data.json file and we will use them while login in to user-profile page
-* you can see the signup credites in the data.json file after you have submit the details in the signup page
+* the login details which are used while signup will be stored in data.json file and we will use them while login in to user-profile page.
+* you can see the signup credites in the data.json file after you have submit the details in the signup page.
+* JSON document databases use the same document-model format that developers use in their application code, which make it much easier for them to store and query data. The flexible, semi-structured, and hierarchical nature of JSON document databases allows them to evolve with applications' needs.
 
-
+## Ajax Form 
+* We create ajax form using js which is used By sending asynchronous requests, it allows an application to refresh a part of a page without having to reload the whole document. 
 
