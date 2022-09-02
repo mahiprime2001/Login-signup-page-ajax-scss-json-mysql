@@ -27,7 +27,7 @@ This webpages has a login page, signup pgae and a user profile page which has wr
 * Now let's install Sass for our project:
 
 *Run this command:
- npm install node-sass in our current directory.
+ "npm install node-sass" in our current directory.
 
 This will create package.json and package-lock.json files for your project with default config.
 
