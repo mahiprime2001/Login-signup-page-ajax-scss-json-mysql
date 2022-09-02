@@ -4,6 +4,7 @@ class RegisterUser{
 	private $username;
 	private $raw_password;
 	private $encrypted_password;
+	private $email;
 	public $error;
 	public $success;
 	private $storage = "data.json";
@@ -11,7 +12,7 @@ class RegisterUser{
 	private $new_user; // array 
 
 
-	public function __construct($username, $password){
+	public function __construct($username, $password, $email){
 
 		$this->username = trim($this->username);
 		$this->username = filter_var($username, FILTER_SANITIZE_STRING);
@@ -19,12 +20,15 @@ class RegisterUser{
 		$this->raw_password = filter_var(trim($password), FILTER_SANITIZE_STRING);
 		$this->encrypted_password = password_hash($this->raw_password, PASSWORD_DEFAULT);
 
+		$this->email = filter_var(trim($email), FILTER_SANITIZE_STRING);
+
 
 		$this->stored_users = json_decode(file_get_contents($this->storage), true);
 
 		$this->new_user = [
 			"name" => $this->username,
 			"password" => $this->encrypted_password,
+			"email" => $this->email,
 		];
 
 		if($this->checkFieldValues()){
@@ -65,7 +69,4 @@ class RegisterUser{
 		}
 	}
 
-
-
-} // end of class
-
+} 
