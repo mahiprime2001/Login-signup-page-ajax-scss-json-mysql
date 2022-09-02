@@ -1,49 +1,62 @@
 <?php require("register.class.php") ?>
 <?php
+	include 'config.php';
+	
 	if(isset($_POST['submit'])){
 		$user = new RegisterUser($_POST['name'], $_POST['password'], $_POST['email']);
+
+		$name = mysqli_real_escape_string($conn, $_POST['name']);
+		$email = mysqli_real_escape_string($conn, $_POST['email']);
+		$pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+		$cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+		$select = mysqli_query($conn, "SELECT * FROM user_form WHERE email = '$email'AND  password = '$pass'") or die('query failed');
+
+		$name_err = $email_err = $password_err = $confirm_password_err = "";
+
+		if(mysqli_num_rows($select) > 0){
+			$message[] = 'Email already exist'; 
+		}
+		else if (empty(trim($_POST['name']))){
+			$name_err = "please enter a username.";
+		}
+		else if(empty(trim($_POST["email"]))){
+			$email_err = "Please enter a email.";
+		}
+		else if(empty(trim($_POST['password']))){
+			$password_err = "Please enter a password.";
+		}
+		else if(empty(trim($_POST['cpassword']))){
+			$confirm_password_err = "Please Re-Type the Password.";
+		}
+		else if(strlen(trim($_POST["password"])) < 6){
+			$password_err = "Password must have atleast 6 characters.";
+		}
+		else if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["name"]))){
+			$name_err = "Username can only contain letters, numbers, and underscores.";
+		}
+		else if (strlen(trim($_POST["password"])) < 6){
+			$password_err = "Password must have atleast 6 characters.";
+		}
+
+		else if(empty($password_err) && ($pass != $cpass)){
+			$confirm_password_err = "Password did not match.";
+		}
+		else{
+			$insert = mysqli_query($conn, "INSERT INTO user_form (name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
+
+			if($insert){
+				$message[] = 'registered successfully!';
+				header('location:index.php');
+			}else{
+				$message[] = 'registeration failed!';
+			}
+		
+		}
 	}
 ?>
 
-<?php
-include 'config.php';
 
-if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-   $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
-   $image = $_FILES['image']['name'];
-   $image_size = $_FILES['image']['size'];
-   $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = 'uploaded_img/'.$image;
-
-   $select = mysqli_query($conn, "SELECT * FROM user_form WHERE email = '$email'AND  password = '$pass'") or die('query failed');
-
-   if(mysqli_num_rows($select) > 0){
-      $message[] = 'Email already exist'; 
-   }else{
-      if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
-      }elseif($image_size > 200000000000000000000000000000000){
-         $message[] = 'image size is too large!';
-      }else{
-         $insert = mysqli_query($conn, "INSERT INTO user_form (name, email, password, image) VALUES('$name', '$email', '$pass', '$image')") or die('query failed');
-
-         if($insert){
-            move_uploaded_file($image_tmp_name, $image_folder);
-            $message[] = 'registered successfully!';
-            header('location:index.php');
-         }else{
-            $message[] = 'registeration failed!';
-         }
-      }
-   }
-
-}
-
-?>
 
 
 <!doctype html>
@@ -71,7 +84,7 @@ if(isset($_POST['submit'])){
 				<div class="row justify-content-center">
 					<div class="col-md-6 col-lg-4">
 						<div class="login-wrap p-0">
-					  <h3 class="mb-4 text-center">Don't have an account?</h3>
+					  <h3 class="mb-4 text-center" style="color: black;">Don't have an account?</h3>
 					  <form  id="signup_page" action="#" class="signin-form signup-now" method="post">
 					  <?php
       if(isset($message)){
@@ -82,6 +95,7 @@ if(isset($_POST['submit'])){
       ?>
 						  <div class="form-group">
 							  <input type="text" name="name"class="form-control" placeholder="Username" required>
+							  <span class="invalid-feedback"><?php echo $name_err; ?></span>
 						  </div>
 						  <div class="form-group">
 							<input type="email" name="email" class="form-control" placeholder="Email" required>
@@ -122,7 +136,7 @@ if(isset($_POST['submit'])){
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/signup.js"></script>
+  <script src="js/signupajax.js"></script>
 
 	</body>
 </html>
