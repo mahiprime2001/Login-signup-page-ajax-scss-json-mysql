@@ -65,3 +65,8 @@ SCSS contains all the features of CSS and contains more features that are not pr
 
 **Without install above _requirements_ you can't get a output correctly**
 
+
+## License
+
+This project has been assigned the [MIT License](LICENSE), so go ahead and feel free to use any and/or all parts of this system and to build on it. Although I would still insist that if you do end up improving this, do accidentally contribute, it would be an honour.
+
