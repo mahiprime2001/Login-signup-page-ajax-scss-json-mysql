@@ -63,4 +63,5 @@ SCSS contains all the features of CSS and contains more features that are not pr
 ## Ajax Form 
 * We create ajax form using js which is used By sending asynchronous requests, it allows an application to refresh a part of a page without having to reload the whole document. we have created loginajax.js for login form and signupajax.js for signup form which are in js folder.
 
+**Without install above _requirements_ you can't get a output correctly**
 
