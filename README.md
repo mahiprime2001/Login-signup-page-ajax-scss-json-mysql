@@ -73,4 +73,6 @@ This project has been assigned the [MIT License](LICENSE), so go ahead and feel 
 ## Note 
 
 * This repository will still go under lot of construction and modifications.
+* The Page will be hosted and avilable for [live demo](https://test.ifleon.com/)
+* Sometimes the Live Demo won't work properly. In that case try to open in incognito tab. This will fix the problem.
 
