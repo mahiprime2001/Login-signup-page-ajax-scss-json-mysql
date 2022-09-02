@@ -1,7 +1,7 @@
 <?php 
 class LoginUser{
 	// class properties
-	private $username;
+	private $email;
 	private $password;
 	public $error;
 	public $success;
@@ -9,8 +9,8 @@ class LoginUser{
 	private $stored_users;
 
 	// class methods
-	public function __construct($username, $password){
-		$this->username = $username;
+	public function __construct($email, $password){
+		$this->email = $email;
 		$this->password = $password;
 		$this->stored_users = json_decode(file_get_contents($this->storage), true);
 		$this->login();
