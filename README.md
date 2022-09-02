@@ -25,8 +25,9 @@ This webpages has a login page, signup pgae and a user profile page which has wr
 ## Now let see how to use scss in the webpages
 
 * Now let's install Sass for our project:
-Run this command:
-npm install node-sass in our current directory.
+
+*Run this command:
+ npm install node-sass in our current directory.
 
 This will create package.json and package-lock.json files for your project with default config.
 
@@ -41,7 +42,10 @@ and then we specify where we want our output  to be, which is our generated css.
     "watch:sass": "node-sass -w scss/style.scss css/style.css --output-style compressed"
 }
 
-Now go to the terminal and type node run watch:sass. This will start a watcher script.
+Now go to the terminal and type:
+node run watch:sass. 
+
+This will start a watcher script.
 
 SCSS contains all the features of CSS and contains more features that are not present in CSS which makes it a good choice for developers to use it. SCSS is full of advanced features. SCSS offers variables, you can shorten your code by using variables. It is a great advantage over conventional CSS.
 
