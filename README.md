@@ -26,8 +26,11 @@ This webpages has a login page, signup pgae and a user profile page which has wr
 
 * Now let's install Sass for our project:
 
-*Run this command:
- "npm install node-sass" in our current directory.
+Run this command:
+
+     "npm install node-sass" 
+ 
+ in our current directory.
 
 This will create package.json and package-lock.json files for your project with default config.
 
@@ -38,12 +41,13 @@ Our script name is going to be "watch:scss".
 We start by defining a node-sass binary, then -w, followed by the path where our .scss file resides, 
 and then we specify where we want our output  to be, which is our generated css.
 
-"scripts": {
-    "watch:sass": "node-sass -w scss/style.scss css/style.css --output-style compressed"
-}
+        "scripts": {
+           "watch:sass": "node-sass -w scss/style.scss css/style.css --output-style compressed"
+         }
 
 Now go to the terminal and type:
-node run watch:sass. 
+
+         node run watch:sass. 
 
 This will start a watcher script.
 
@@ -53,7 +57,10 @@ SCSS contains all the features of CSS and contains more features that are not pr
 * the login details which are used while signup will be stored in data.json file and we will use them while login in to user-profile page.
 * you can see the signup credites in the data.json file after you have submit the details in the signup page.
 * JSON document databases use the same document-model format that developers use in their application code, which make it much easier for them to store and query data. The flexible, semi-structured, and hierarchical nature of JSON document databases allows them to evolve with applications' needs.
+* The php functions which are used to store the data in json files are written in the files login.class.php and register.class.php
+-> in register.class.php you can change the elements in the funtion which to be store which to be not as you wish.
 
 ## Ajax Form 
-* We create ajax form using js which is used By sending asynchronous requests, it allows an application to refresh a part of a page without having to reload the whole document. we have created loginajax.js for login form and signupajax.js for signup form which are in js folder 
+* We create ajax form using js which is used By sending asynchronous requests, it allows an application to refresh a part of a page without having to reload the whole document. we have created loginajax.js for login form and signupajax.js for signup form which are in js folder.
+
 
