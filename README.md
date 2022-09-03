@@ -78,5 +78,5 @@ This project has been assigned the [MIT License](LICENSE), so go ahead and feel 
 
 ## 🙋 Discussions
 
-Do you have questions, ideas or any request related to Vuemmerce? Start a <a href="https://github.com/mahiprime2001/Login-signup-page-ajax-scss-json-mysql/discussions">discussion here</a>.
+Do you have questions, ideas or any request related to prime? Start a <a href="https://github.com/mahiprime2001/Login-signup-page-ajax-scss-json-mysql/discussions">discussion here</a>.
 
