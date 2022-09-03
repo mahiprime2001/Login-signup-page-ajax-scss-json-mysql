@@ -76,3 +76,7 @@ This project has been assigned the [MIT License](LICENSE), so go ahead and feel 
 * The Page will be hosted and avilable for [live demo](https://test.ifleon.com/)
 * Sometimes the Live Demo won't work properly. In that case try to open in incognito tab. This will fix the problem.
 
+## 🙋 Discussions
+
+Do you have questions, ideas or any request related to Vuemmerce? Start a <a href="https://github.com/">discussion here</a>.
+
