@@ -91,6 +91,6 @@ Some third-party plugins that we used to build this template. Please check their
 * **SASS**: <https://sass-lang.com/dart-sass/>
 
 Some refernces we have include to use while buliding the web pages.
-* **AJAX Form **: <https://www.digitalocean.com/community/tutorials/submitting-ajax-forms-with-jquery/>
+* **AJAX Form**: <https://www.digitalocean.com/community/tutorials/submitting-ajax-forms-with-jquery/>
 * **Bootstrap**: <https://www.npmjs.com/package/bootstrap/>
 
