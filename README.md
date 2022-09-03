@@ -80,3 +80,12 @@ This project has been assigned the [MIT License](LICENSE), so go ahead and feel 
 
 Do you have questions, ideas or any request related to prime? Start a <a href="https://github.com/mahiprime2001/Login-signup-page-ajax-scss-json-mysql/discussions">discussion here</a>.
 
+<!-- resources -->
+## Resources
+
+Some third-party plugins that we used to build this template. Please check their license.
+
+* **Bootstrap v3.3.7**: <https://getbootstrap.com/docs/3.3/getting-started/>
+* **Jquery**: <https://jquery.com/download/>
+* **Google Fonts**: <http://fonts.google.com/>
+
