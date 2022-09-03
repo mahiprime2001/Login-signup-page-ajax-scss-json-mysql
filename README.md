@@ -88,4 +88,5 @@ Some third-party plugins that we used to build this template. Please check their
 * **Bootstrap v3.3.7**: <https://getbootstrap.com/docs/3.3/getting-started/>
 * **Jquery**: <https://jquery.com/download/>
 * **Google Fonts**: <http://fonts.google.com/>
+* **SASS**: <https://sass-lang.com/dart-sass/>
 
