@@ -11,35 +11,34 @@
 		$cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
 		$select = mysqli_query($conn, "SELECT * FROM user_form WHERE email = '$email'AND  password = '$pass'") or die('query failed');
 
-		$name_err = $email_err = $password_err = $confirm_password_err = "";
 
 		if(mysqli_num_rows($select) > 0){
 			$message[] = 'Email already exist'; 
 		}
 		else if (empty(trim($_POST['name']))){
-			$name_err = "please enter a username.";
+			$message[] = "please enter a username.";
 		}
 		else if(empty(trim($_POST["email"]))){
-			$email_err = "Please enter a email.";
+			$message[] = "Please enter a email.";
 		}
 		else if(empty(trim($_POST['password']))){
-			$password_err = "Please enter a password.";
+			$message[] = "Please enter a password.";
 		}
 		else if(empty(trim($_POST['cpassword']))){
-			$confirm_password_err = "Please Re-Type the Password.";
+			$message[] = "Please Re-Type the Password.";
 		}
 		else if(strlen(trim($_POST["password"])) < 6){
-			$password_err = "Password must have atleast 6 characters.";
+			$message[] = "Password must have atleast 6 characters.";
 		}
 		else if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["name"]))){
-			$name_err = "Username can only contain letters, numbers, and underscores.";
+			$message[] = "name can only contain letters, numbers, and underscores.";
 		}
 		else if (strlen(trim($_POST["password"])) < 6){
-			$password_err = "Password must have atleast 6 characters.";
+			$message[] = "Password must have atleast 6 characters.";
 		}
 
 		else if(empty($password_err) && ($pass != $cpass)){
-			$confirm_password_err = "Password did not match.";
+			$message[] = "Password did not match.";
 		}
 		else{
 			$insert = mysqli_query($conn, "INSERT INTO user_form (name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
@@ -95,7 +94,6 @@
       ?>
 						  <div class="form-group">
 							  <input type="text" name="name"class="form-control" placeholder="Username" required>
-							  <span class="invalid-feedback"><?php echo $name_err; ?></span>
 						  </div>
 						  <div class="form-group">
 							<input type="email" name="email" class="form-control" placeholder="Email" required>
