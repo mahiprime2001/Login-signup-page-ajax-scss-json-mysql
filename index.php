@@ -11,18 +11,15 @@
     		header("location: user_profile.php");
     		exit;
 		}
-
-		$email = $password = "";
-		$email_err = $password_err = $login_err = "";
    		$email = mysqli_real_escape_string($conn, $_POST['email']);
    		$pass = mysqli_real_escape_string($conn, md5($_POST['password']));
    		$select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    		if (empty(trim($_POST["email"]))){
-			$email_err = "Please enter Email.";
+			$message[] = "Please enter Email.";
    		}
 		else if(empty(trim($_POST["password"]))){
-			$password_err = "Please enter your password.";
+			$message[] = "Please enter your password.";
 		}
    		else if(mysqli_num_rows($select) > 0){
 			$row = mysqli_fetch_assoc($select);
@@ -76,16 +73,16 @@
                     ?>
                     <div class="form-group">
 		      			<input type="email" class="form-control" name="email" placeholder="EMAIL" required>
+						  <span class="invalid-feedback"><?php echo $email_err; ?></span>
 		      		</div>
 	            <div class="form-group">
 	              <input id="password-field" type="password" name="password" class="form-control" placeholder="Password" required>
 				  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+				  <span class="invalid-feedback"><?php echo $password_err; ?></span>
 	            </div>
 	            <div class="form-group">
 	            	<button type="submit" name="submit" class="form-control btn btn-primary submit px-3" value="login-now">Sign In</button>
 	            </div>
-				<div class="error">	
-				</div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
 		            	<label class="checkbox-wrap checkbox-primary">Remember Me
